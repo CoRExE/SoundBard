@@ -1,0 +1,24 @@
+main {
+    padding: 20px;
+}
+
+main > ul {
+    list-style: none;
+    padding: 0;
+}
+
+main > ul >li {
+    margin-bottom: 10px;
+}
+
+.sound-button {
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur de souris */
+}
+
+.sound-button:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+}

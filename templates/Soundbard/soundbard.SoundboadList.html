@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    {% include 'Soundbard/components/soundbard.head.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'SoundBard/css/SoundboardList.css' %}">
+<body>
+{% include 'Soundbard/components/soundbard.header.html' %}
+<main>
+    <ul>
+        {% for sound in sounds %}
+            <li>
+                <button class="sound-button" value="{{ sound.id }}">{{ sound.title }}</button>
+                <audio id="audio{{ sound.id }}" src="{{ sound.sound.url }}"></audio>
+            </li>
+        {% empty %}
+            <li>No soundboards found.</li>
+        {% endfor %}
+    </ul>
+</main>
+<script src="{% static 'SoundBard/js/PlaySounds.js' %}"></script>
+</body>
+</html>

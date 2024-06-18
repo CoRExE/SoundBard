@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to KalypsoAI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Kalypso/css/home.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'Kalypso/js/quickChat.js' %}"></script>
+    <noscript>Enable your Javascript</noscript>
+</head>
+<body>
+    <main>
+        <div class="content">
+            <h1>Kalypso</h1>
+            <h2>Your app integration with Ollama™</h2>
+            <p>Here you can integrate your app with Ollama™, the AI that can help you to understand your users better.</p>
+            <p>Just follow the steps below to get started.</p>
+        </div>
+
+        <div class="content">
+            <h2>Step 1: Create an account or Log you</h2>
+            <p>First, you need to create an account with KalypsoAI. This will allow you to access the API and start using Ollama™.</p>
+            <a href="/kalypso/credentials">Create an account</a>
+            <p>or</p>
+            <a href="/kalypso/credentials/?credential=login">Log you</a>
+        </div>
+
+        <div class="content">
+            <h2>Step 2: Install Ollama</h2>
+            <p>Once you have created an account, you will need to install Ollama™.
+                This will allow you to access the API and start using Ollama™.</p>
+            <a href="/kalypso/install">Install Ollama™</a>
+        </div>
+
+        <div class="content">
+            <h2>Step 3: Get your API key</h2>
+            <p>Once you have created an account, you will be able to generate an API key. This key will allow you to access the Ollama™ API and start using it in your app.</p>
+            <a href="#">Get your API key</a>
+        </div>
+
+        <div class="content">
+            <h2>Step 4: Start using Ollama™ with Kalypso</h2>
+            <p>Once you have obtained your API key, you can start using it interact and more</p>
+            <p>Until you don't have an API, don't worry, you have already accessed to the quick chat</p>
+            <a href="/kalypso/dashboard">Start using Ollama™</a>
+        </div>
+        {% if login == True %}
+        <div class="content">
+            <h2>Quick Chat</h2>
+            <p>Need help? Chat with us now!</p>
+            <label for="quick-chat">
+                <input type="text" id="quick-chat" name="quick-chat" placeholder="Type your message here">
+            </label>
+            <div id="chat-box">
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</body>
+</html>

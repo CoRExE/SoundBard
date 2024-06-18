@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'Soundbard/components/soundbard.head.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'SoundBard/css/upload.css' %}">
+<body>
+{% include 'Soundbard/components/soundbard.header.html' %}
+<main>
+    <form method="POST" action="{% url 'soundboard.upload_file' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file-upload">Ajouter un son</label>
+        <input type="file" id="file-upload" name="file" accept="audio/mpeg" required>
+        <button type="submit" id="submit-button">Uploader</button>
+    </form>
+</main>
+<script src="{% static 'SoundBard/js/UnwantedElements.js' %}"></script>
+</body>
+</html>

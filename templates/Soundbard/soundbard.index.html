@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'SoundBard/css/index.css' %}">
+</head>
+<body>
+    {% include 'Soundbard/components/soundbard.header.html' %}
+    <main>
+        <div class="logo">
+            <img src="{% static 'SoundBard/assets/Logo.jpg' %}" alt="Logo SoundBard">
+        </div>
+        <h1>{{ message }}</h1>
+    </main>
+</body>
+</html>
